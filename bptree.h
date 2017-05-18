@@ -127,10 +127,12 @@ private:
         int i = _size - 1;
         while (key > _keys[i] && i >= 0) {
             _keys[i + 1] = _keys[i];
+            _pointer[i + 2] = _pointer[i + 1];
             i--;
         }
 
         _keys[i + 1] = key;
+        _pointer[i + 2] = ptr;
         _size++;
     }
 }
